@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: %i[ show edit update destroy ]
-  add_breadcrumb "home", :root_path
+  add_breadcrumb "Home", :root_path
 
   # GET /courses or /courses.json
   def index
