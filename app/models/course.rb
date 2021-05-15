@@ -9,4 +9,8 @@ class Course < ApplicationRecord
   has_rich_text :description
 
   belongs_to :user
+
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
 end

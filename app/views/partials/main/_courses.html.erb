@@ -1,0 +1,31 @@
+<section class="ftco-section bg-light">
+   <div class="container">
+      <div class="row justify-content-center pb-4">
+          <div class="col-md-12 heading-section text-center ftco-animate fadeInUp ftco-animated">
+          	<span class="subheading">Start Learning Today</span>
+            <h2 class="mb-4">Pick Your Course</h2>
+        </div>
+    </div>
+    <div class="row">
+      <% @courses.each do |course|  %>
+
+       <div class="col-md-4 ftco-animate fadeInUp ftco-animated">
+          <div class="project-wrap">
+             <a href="courses/<%= course.slug %>" class="img" style="background-image: url(images/work-1.jpg);">
+                <span class="price">Software</span>
+            </a>
+            <div class="text p-4">
+                <h3><a href="courses/<%= course.slug %>"><%= course.title %></a></h3>
+                <p class="advisor">Advisor <span><%= course.user.email %></span></p>
+                <ul class="d-flex justify-content-between">
+                  <li><span class="flaticon-shower"></span><%= course.slug %></li>
+                   <li class="price">$199</li>
+               </ul>
+           </div>
+       </div>
+   </div>
+   <% end %>
+
+</div>
+</div>
+</section>

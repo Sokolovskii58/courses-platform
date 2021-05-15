@@ -1,0 +1,32 @@
+<section class="ftco-section bg-light">
+  <div class="container">
+     <div class="row justify-content-center pb-4">
+      <div class="col-md-12 heading-section text-center ftco-animate fadeInUp ftco-animated">
+          <h2 class="mb-4">New Courses</h2>
+     </div>
+ </div>
+ <div class="row d-flex">
+   <% @new_courses.each do |course|  %>
+  <div class="col-lg-4 ftco-animate fadeInUp ftco-animated">
+    <div class="blog-entry">
+      <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+      </a>
+      <div class="text d-block">
+         <div class="meta">
+          <p>
+             <a href="#"><span class="fa fa-calendar mr-2"></span><%= course.created_at %></a>
+             <a href="#"><span class="fa fa-user mr-2"></span><%= course.user.email %></a>
+             <a href="#" class="meta-chat"><span class="fa fa-comment mr-2"></span> 3</a>
+         </p>
+     </div>
+     <h3 class="heading"><a href="courses/<%= course.id %>"><%= course.title %></a></h3>
+     <p><%= course.description %></p>
+     <p><a href="courses/<%= course.id %>" class="btn btn-secondary py-2 px-3">Learn Now</a></p>
+ </div>
+</div>
+</div>
+<% end %>
+
+</div>
+</div>
+</section>

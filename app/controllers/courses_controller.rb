@@ -4,8 +4,12 @@ class CoursesController < ApplicationController
 
   # GET /courses or /courses.json
   def index
-    #@courses = Course.all
-    @pagy, @courses = pagy(Course.all, items: 10)
+    if params[:title]
+      @pagy, @courses = pagy(Course.where('title ILIKE ?', "%#{params[:title]}%"))
+
+    else
+      @pagy, @courses = pagy(Course.all, items: 10)
+    end
     add_breadcrumb "Courses", courses_path
     @courses_name = "Courses"
   end
@@ -64,7 +68,7 @@ class CoursesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course
-      @course = Course.find(params[:id])
+      @course = Course.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
