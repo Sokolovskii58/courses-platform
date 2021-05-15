@@ -26,6 +26,7 @@ gem 'simple_form'
 gem 'faker'
 gem 'devise'
 gem 'breadcrumbs_on_rails'
+gem 'pagy'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

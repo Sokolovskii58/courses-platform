@@ -4,7 +4,8 @@ class CoursesController < ApplicationController
 
   # GET /courses or /courses.json
   def index
-    @courses = Course.all
+    #@courses = Course.all
+    @pagy, @courses = pagy(Course.all, items: 10)
     add_breadcrumb "Courses", courses_path
     @courses_name = "Courses"
   end
