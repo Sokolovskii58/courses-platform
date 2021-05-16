@@ -1,0 +1,14 @@
+<div class="container">
+  <ul>
+    <% @activities.each do |activity| %>
+  <li>
+      <%= activity.id %>
+      <%= activity.trackable_id %>
+      <%= activity.trackable_type %>
+      <%= activity.key %>
+      <%= activity.parameters %>
+      <%= activity.owner.email %>
+  </li>
+  <% end %>
+  </ul>
+</div>

@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   end
   resources :courses
   resources :users
-
+  get 'main/activity'
   root to: "main#index"
 end

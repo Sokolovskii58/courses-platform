@@ -28,6 +28,7 @@ gem 'devise'
 gem 'breadcrumbs_on_rails'
 gem 'pagy'
 gem 'friendly_id', '~> 5.4.0'
+gem 'public_activity'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

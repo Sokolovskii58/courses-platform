@@ -8,4 +8,8 @@ class MainController < ApplicationController
 
     add_breadcrumb "index", root_path
   end
+
+  def activity
+    @activities = PublicActivity::Activity.all
+  end
 end
