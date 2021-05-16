@@ -70,8 +70,8 @@
 									<h3><a href="courses/<%= course.slug %>"><%= course.title %></a></h3>
 									<p class="advisor">Advisor <span><%= course.user.email %></span></p>
 									<ul class="d-flex justify-content-between">
-										<li><span class="flaticon-shower"></span><%= course.slug %></li>
-										<li class="price">$199</li>
+										<li><span class="flaticon-shower"></span><%= course.level %></li>
+										<li class="price">$<%= course.price %></li>
 									</ul>
 								</div>
 							</div>

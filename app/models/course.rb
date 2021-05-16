@@ -1,5 +1,5 @@
 class Course < ApplicationRecord
-  validates :title,  presence: true
+  validates :title, :short_description, :lang, :price, :level,  presence: true
   validates :description, presence: true, length: { :minimum => 5 }
 
   def to_s
