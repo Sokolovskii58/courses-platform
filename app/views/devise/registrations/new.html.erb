@@ -1,0 +1,102 @@
+
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-12">
+					<div class="wrapper">
+						<div class="row no-gutters">
+							<div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
+								<div class="contact-wrap w-100 p-md-5 p-4">
+									<h3 class="mb-4">Registrations</h3>
+									<form method="POST" id="contactForm" name="contactForm" class="contactForm">
+										<div class="row">
+											<div class="col-md-12">
+												<div class="form-group">
+                          <%= f.input :email,
+                                      required: true,
+                                      autofocus: true,
+                                      class: "form-control",
+                                      placeholder: "Email",
+                                      input_html: { autocomplete: "email" }%>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+                          <%= f.input :password,
+                                      required: true,
+                                      class: "form-control",
+                                      placeholder: "Password",
+                                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                                      input_html: { autocomplete: "new-password" } %>
+												</div>
+											</div>
+                      <div class="col-md-6">
+												<div class="form-group">
+                          <%= f.input :password_confirmation,
+                                      required: true,
+                                      class: "form-control",
+                                      placeholder: "Password Confirmation",
+                                      input_html: { autocomplete: "new-password" } %>
+												</div>
+
+											</div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="exampleInputRole" class="form-label">Are you a student or teacher?</label>
+                          <%= f.collection_select :role_ids, Role.where.not(name: "admin"), :id, :name, {promt: "Choose a category" }, { class: "form-control password required" } %>
+                        </div>
+
+											</div>
+
+											<div class="col-md-12">
+												<div class="form-group">
+                          <%= f.button :submit, "Create Account", class: "btn btn-primary" %>
+													<div class="submitting"></div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-5 d-flex align-items-stretch">
+								<div class="info-wrap bg-primary w-100 p-md-5 p-4">
+									<h3>Let's create your account</h3>
+									<p class="mb-4">Create an account and get access to courses</p>
+									<div class="dbox w-100 d-flex align-items-start">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<i class="fas fa-envelope"></i>
+										</div>
+										<div class="text pl-3">
+											<p><span>Email:</span> Enter and confirm your email</p>
+										</div>
+									</div>
+									<div class="dbox w-100 d-flex align-items-center">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<i class="fas fa-key"></i>
+										</div>
+										<div class="text pl-3">
+											<p><span>Password:</span> Come up with your password at least 6 characters</p>
+										</div>
+									</div>
+									<div class="dbox w-100 d-flex align-items-center">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<i class="fas fa-user-circle"></i>
+										</div>
+										<div class="text pl-3">
+											<p><span>Role:</span> Choose your role as student or teacher</p>
+										</div>
+									</div>
+ 								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</section>
+  <% end %>

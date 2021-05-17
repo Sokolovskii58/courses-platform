@@ -1,4 +1,6 @@
 class MainController < ApplicationController
+  before_action :restrict_access
+
   add_breadcrumb "home", :root_path
   add_breadcrumb "courses", :courses_path
 
@@ -9,7 +11,9 @@ class MainController < ApplicationController
     add_breadcrumb "index", root_path
   end
 
-  def activity
-    @activities = PublicActivity::Activity.all
+
+  def restrict_access
+    redirect_to courses_path if current_user.present?
   end
+
 end

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   resources :courses
   resources :users
-  get 'main/activity'
+  get 'admin/activity'
+  
   root to: "main#index"
 end
