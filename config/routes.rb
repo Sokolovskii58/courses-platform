@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :courses
   resources :users
   get 'admin/activity'
-  
+  get "/admin" => "admin#index", as: :index
+
   root to: "main#index"
 end

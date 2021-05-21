@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
    <div class="container">
-     <a class="navbar-brand" href="index.html"><span>Course</span>Lab</a>
+     <a class="navbar-brand" href="<%= root_path  %>"><span>Course</span>Lab</a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
        <span class="oi oi-menu"></span> Menu
    </button>
@@ -15,6 +15,7 @@
          <li class="nav-item <%= 'active' if current_page?(users_path) %>"><a href="<%= users_path  %>" class="nav-link">Instructor</a></li>
          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+         <li class="nav-item bg-primary"><a href="<%= new_course_path %>" class="nav-link">New Course</a></li>
 
          <% if current_user.present? && current_user.has_role?(:admin) %>
            <li class="nav-item <%= 'active' if current_page?(admin_activity_path) %>"><a href="<%= admin_activity_path  %>" class="nav-link">Admin Panel</a></li>
