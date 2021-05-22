@@ -5,12 +5,13 @@
 
   <div class="form-inputs">
     <%= f.input :title %>
-    <%= f.input :content %>
+    <%= f.label :description %>
+    <%= f.rich_text_area :content %>
     <%= f.input :course_id, input_html: {value: @lesson.course_id || params[:course_id]}, as: :hidden %>
 
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn btn-primary mb-5" %>
   </div>
 <% end %>

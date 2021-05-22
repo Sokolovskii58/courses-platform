@@ -11,4 +11,7 @@ class Lesson < ApplicationRecord
   def to_s
     title
   end
+
+  has_rich_text :content
+
 end
