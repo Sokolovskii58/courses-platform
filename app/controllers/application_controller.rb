@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   include PublicActivity::StoreController
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  after_action :user_activity
+
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   protected
@@ -17,6 +19,12 @@ class ApplicationController < ActionController::Base
 
     rescue_from Pundit::NotAuthorizedError do |exception|
       redirect_to new_user_session_path, alert: exception.message
+    end
+
+  private
+
+    def user_activity
+      current_user.try :touch
     end
 
 end

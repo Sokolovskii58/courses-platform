@@ -18,7 +18,11 @@
                           <% user.roles.each do |u| %>
                             <h4><%= u.name %></h4>
                           <% end %>
-                          <p class="text-muted"><%= user.id %> <span>| </span><span><a href="#" class="text-pink"><%= user.email %></a></span></p>
+                          <% if user.online? %>
+                          <p class="text-muted"> <i class="fas fa-circle text-success"></i> <span>| </span><span><a href="#" class="text-pink"><%= user.email %></a></span></p>
+                          <% else %>
+                          <p class="text-muted"> <i class="fas fa-circle text-danger"></i> <span>| </span><span><a href="#" class="text-pink"><%= user.email %></a></span></p>
+                          <% end %>
                         </div>
                         <ul class="social-links list-inline">
                             <li class="list-inline-item"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
