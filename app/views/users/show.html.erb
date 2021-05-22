@@ -187,7 +187,9 @@
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                       <div class="accordion-body">
-                        <%= render 'partials/users/activity' %>
+                        <% @courses.each do |course| %>
+                          <%= render 'partials/users/activity', course: course %>
+                        <% end %>
                       </div>
                     </div>
                   </div>

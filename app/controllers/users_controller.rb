@@ -23,8 +23,9 @@ class UsersController < ApplicationController
   end
 
   def show
-     add_breadcrumb "users", :users_path
+    add_breadcrumb "users", :users_path
     add_breadcrumb @user.email, current_user
+    @courses = @user.courses
   end
 
   private
