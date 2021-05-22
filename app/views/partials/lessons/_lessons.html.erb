@@ -1,3 +1,8 @@
+<% if @course.user == current_user %>
+ <div class="col-md-12 mb-3">
+     <%= link_to 'Add Lesson', new_lesson_path(course_id: @course.id), class: "btn btn-primary w-100 px-4 py-3" %>
+ </div>
+<% end %>
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
